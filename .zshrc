@@ -81,3 +81,5 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $HOME/.zshrc-aliases
 source $HOME/.zshrc-env
+# NVM #
+source $(brew --prefix nvm)/nvm.sh
