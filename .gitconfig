@@ -1,3 +1,14 @@
+[user]
+	name = Hernan Gabriel Pieroni
+	email = hernan.pieroni@gmail.com
+
+[credential]
+  helper = store
+
+[core]
+	excludesfile = /Users/hernan/.gitignore_global
+	editor = vim
+
 [color]
   diff = auto
   status = auto
@@ -6,27 +17,42 @@
   grep = always
 	ui = auto
 
-[alias] 
-  tree = log --graph --decorate --pretty=oneline --abbrev-commit
-  conflicts = !git ls-files -u | cut -f 2 | sort -u
+[push]
+  default = simple
 
-[user]
-	name = Hernan Gabriel Pieroni
-	email = hernan.pieroni@gmail.com
-[core]
-	excludesfile = /Users/hernan/.gitignore_global
-	editor = vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+[pull]
+  default = current
+
+[alias]
+  conflicts = !git ls-files -u | cut -f 2 | sort -u
+  lasttag = describe --tags --abbrev=0
+
+  #commons
+  cp = cherry-pick
+  st = status -s
+  cl = clone
+  ci = commit
+  co = checkout
+  br = branch
+
+  #logs
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+  #reset
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+
+  #stash
+  sl = stash list
+  ss = stash save
+  ssu = stash save --include-untracked
+  sa = stash apply
+  sd = stash drop
+  sp = stash pop
+  sc = stash clear
