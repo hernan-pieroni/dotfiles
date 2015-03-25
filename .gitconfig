@@ -1,13 +1,13 @@
 [user]
-	name = Hernan Gabriel Pieroni
-	email = hernan.pieroni@gmail.com
+  name = Hernan Gabriel Pieroni
+  email = hernan.pieroni@gmail.com
 
 [credential]
   helper = store
 
 [core]
-	excludesfile = /Users/hernan/.gitignore_global
-	editor = vim
+  excludesfile = /Users/hernan/.gitignore_global
+  editor = vim
 
 [color]
   diff = auto
@@ -15,7 +15,7 @@
   branch = auto
   interactive = auto
   grep = always
-	ui = auto
+  ui = auto
 
 [push]
   default = simple
