@@ -25,8 +25,7 @@
 
 [alias]
   conflicts = !git ls-files -u | cut -f 2 | sort -u
-  lasttag = describe --tags --abbrev=0
-
+  
   #commons
   cp = cherry-pick
   st = status -s
@@ -56,15 +55,21 @@
   sd = stash drop
   sp = stash pop
   sc = stash clear
+  
+  #tags
+  lasttag = describe --tags --abbrev=0
+  
+  #clean
+  nah="git reset --hard; git clean -df"
 
 [diff]
-	tool = diffmerge
+  tool = diffmerge
 
 [difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 
 [merge]
-	tool = diffmerge
+  tool = diffmerge
 
 [mergetool "diffmerge"]
   cmd = diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
