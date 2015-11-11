@@ -60,7 +60,7 @@
   lasttag = describe --tags --abbrev=0
   
   #clean
-  nah="git reset --hard; git clean -df"
+  nah="!git reset --hard; git clean -df"
 
 [diff]
   tool = diffmerge
