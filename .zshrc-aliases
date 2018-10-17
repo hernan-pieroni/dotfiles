@@ -3,3 +3,8 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 
 # Hides hidden files in osx (Finder)
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# Find process that is using the port given as argument
+function findport() {
+  lsof -wni tcp:"$1"
+}
