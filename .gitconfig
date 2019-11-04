@@ -23,6 +23,14 @@
 [pull]
   default = current
 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
 [alias]
   conflicts = !git ls-files -u | cut -f 2 | sort -u
   
@@ -61,16 +69,3 @@
   
   #clean
   nah="!git reset --hard; git clean -df"
-
-[diff]
-  tool = diffmerge
-
-[difftool "diffmerge"]
-  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-
-[merge]
-  tool = diffmerge
-
-[mergetool "diffmerge"]
-  cmd = diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-  trustExitCode = true

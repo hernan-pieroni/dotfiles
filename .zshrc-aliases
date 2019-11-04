@@ -1,10 +1,20 @@
-# shows hidden files in osx (Finder)
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+# Find aliases with given keywords
+alias falias="alias | grep"
 
-# Hides hidden files in osx (Finder)
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+# Remove not empty folder
+alias rmr="rm -r -f"
 
 # Find process that is using the port given as argument
 function findport() {
-  lsof -wni tcp:"$1"
+  lsof -wni :$1
+}
+
+# Create a directory and move to it
+function mkcd () {
+  mkdir $1 && cd $_
+}
+
+# Find history entries with given keywords
+function hgrep () {
+  history | grep --color $1
 }
