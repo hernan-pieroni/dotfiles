@@ -23,22 +23,16 @@
 [pull]
   default = current
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
 [alias]
+  alias = config --get-regexp alias
   conflicts = !git ls-files -u | cut -f 2 | sort -u
-  
+
   #commons
   cp = cherry-pick
   st = status -s
   cl = clone
-  ci = commit
+  c = commit
+  ca= commit --amend
   co = checkout
   br = branch
 
