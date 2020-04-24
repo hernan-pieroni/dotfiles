@@ -126,6 +126,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $HOME/.zshrc-aliases
-[[ -f $HOME/.zshrc-aliases-private ]] && source $HOME/.zshrc-aliases-private
-source $HOME/.zshrc-env
+# Load shell dotfiles:
+for file in ~/.{exports,exports,aliases,aliases,functions,functions}
+do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+  [ -r "$file"-private ] && [ -f "$file"-private ] && source "$file"-private;
+done;
+unset file;

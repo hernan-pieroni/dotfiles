@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Find aliases with given keywords
+alias falias="alias | grep"
+
+# Remove not empty folder
+alias rmr="rm -r -f"
