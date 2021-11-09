@@ -5,3 +5,6 @@ alias falias="alias | grep"
 
 # Remove not empty folder
 alias rmr="rm -r -f"
+
+# Delete all local git branches except for master and develop
+alias clean-branches="git branch | grep -w -v 'master\|develop' | xargs git branch -D"
