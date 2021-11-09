@@ -63,3 +63,5 @@
   
   #clean
   nah="!git reset --hard; git clean -df"
+  brda="!git branch | grep -w -v "master\|develop" | xargs git branch -D"
+  
