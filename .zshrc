@@ -93,7 +93,7 @@ plugins=(
   docker
   git
   git-flow
-  osx
+  macos
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
