@@ -5,6 +5,19 @@ function findport() {
   lsof -wni :$1
 }
 
+# Kill processes from a port range
+function killrangeports() {
+  fromPort=$1
+  toPort=$2
+  for i in $(seq $fromPort $toPort); do
+    pid=$(lsof -i:$i -t -sTCP:LISTEN)
+    if [ -n "$pid" ]; then
+      echo "pid: $pid on port: $i killed"  
+      kill -TERM $pid || kill -KILL $pid
+    fi
+  done
+}
+
 # Create a directory and move to it
 function mkcd () {
   mkdir $1 && cd $_
