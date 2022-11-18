@@ -8,3 +8,7 @@ alias rmr="rm -r -f"
 
 # Delete all local git branches except for master and develop
 alias clean-branches="git branch | grep -w -v 'master\|develop' | xargs git branch -D"
+
+# I find this useful when looking at files in the terminal, especially language specific files that can be whitespace dependent.
+# Some info https://stackoverflow.com/questions/7851134/syntax-highlighting-colorizing-cat
+alias ccat="pygmentize -g -O style=material"
