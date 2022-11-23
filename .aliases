@@ -12,3 +12,6 @@ alias clean-branches="git branch | grep -w -v 'master\|develop' | xargs git bran
 # I find this useful when looking at files in the terminal, especially language specific files that can be whitespace dependent.
 # Some info https://stackoverflow.com/questions/7851134/syntax-highlighting-colorizing-cat
 alias pcat="pygmentize -g -O style=material"
+
+# Open URL in a chrome tab. Usage: `chrome https://hpieroni.com`
+alias chrome='open -a "Google Chrome.app"'
