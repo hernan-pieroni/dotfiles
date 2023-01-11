@@ -67,3 +67,8 @@ function absolutePath() {
     echo $file
   done
 }
+
+# Return weather of current location unless a location is specified
+function weather() {
+  curl "wttr.in/$1"
+}
