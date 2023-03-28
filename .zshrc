@@ -133,3 +133,6 @@ do
   [ -r "$file"-private ] && [ -f "$file"-private ] && source "$file"-private;
 done;
 unset file;
+
+# Github Copilot Cli - add ?? git? and gh? commands in the shell
+eval "$(github-copilot-cli alias -- "$0")"
