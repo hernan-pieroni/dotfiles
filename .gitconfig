@@ -62,5 +62,6 @@
   lasttag = describe --tags --abbrev=0
   
   #clean
-  nah="!git reset --hard; git clean -df"
+  undo = reset --soft HEAD^
+  nah = "!git reset --hard; git clean -df"
   
