@@ -13,3 +13,7 @@
     * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) by `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
     * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-autosuggestions) by `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
 5. Import **iTerm** profile `iterm-profile.json` to set color schema and fonts
+6. MacOS Finder setup
+   - `defaults write com.apple.finder AppleShowAllFiles YES`
+   - `defaults write com.apple.finder ShowPathbar -bool true`
+   - `defaults write com.apple.finder ShowStatusBar -bool true`
